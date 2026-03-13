@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boeing Release Status Board</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="page-shell">
+        <div class="ambient-orb orb-one" aria-hidden="true"></div>
+        <div class="ambient-orb orb-two" aria-hidden="true"></div>
+
+        <header class="hero-panel">
+            <div class="hero-copy">
+                <p class="eyebrow">Operations Status Board</p>
+                <h1>Boeing Release Readiness Tracker</h1>
+                <p class="hero-text">
+                    Add, review, and retire delivery items in a polished status table with motion,
+                    crisp signals, and fast release visibility.
+                </p>
+                <div class="hero-badges" aria-label="Feature highlights">
+                    <span class="hero-badge">Animated updates</span>
+                    <span class="hero-badge">Persistent items</span>
+                    <span class="hero-badge">Responsive layout</span>
+                </div>
+            </div>
+
+            <div class="hero-brand-card">
+                <div class="logo-wrap">
+                    <img
+                        class="boeing-logo"
+                        src="https://logos-world.net/wp-content/uploads/2021/08/Boeing-Logo.png"
+                        alt="Boeing logo"
+                    />
+                </div>
+                <div class="brand-copy">
+                    <span class="brand-kicker">Flight deck overview</span>
+                    <strong>Program status at a glance</strong>
+                    <p>Built for quick standups, release checks, and visible progress tracking.</p>
+                </div>
+            </div>
+        </header>
+
+        <section class="panel table-panel">
+            <div class="table-heading">
+                <div>
+                    <p class="eyebrow">Table View</p>
+                    <h2>Requirement readiness</h2>
+                </div>
+                <p class="table-subtitle">Use the remove action to retire completed or canceled work items.</p>
+            </div>
+
+            <div class="table-shell">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">
+                                <span class="th-wrap">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M4 7.5 12 3l8 4.5-8 4.5-8-4.5Zm0 3.9 8 4.5 8-4.5" />
+                                    </svg>
+                                    Item
+                                </span>
+                            </th>
+                            <th scope="col">
+                                <span class="th-wrap">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M4 7h16M4 12h16M4 17h10" />
+                                    </svg>
+                                    Scope
+                                </span>
+                            </th>
+                            <th scope="col">
+                                <span class="th-wrap">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M6 12h4l2-5 3 10 2-5h3" />
+                                    </svg>
+                                    Status
+                                </span>
+                            </th>
+                            <th scope="col">
+                                <span class="th-wrap">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M5 6h14a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H9l-4 3v-3H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" />
+                                    </svg>
+                                    Comments
+                                </span>
+                            </th>
+                            <th scope="col">
+                                <span class="th-wrap">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M7 4v3M17 4v3M4 9h16M5 6h14a1 1 0 0 1 1 1v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a1 1 0 0 1 1-1Z" />
+                                    </svg>
+                                    Release Target
+                                </span>
+                            </th>
+                            <th scope="col">
+                                <span class="th-wrap">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M9 5h6M7 8h10M8 8l1 11a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2l1-11" />
+                                    </svg>
+                                    Action
+                                </span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="dashboard-grid">
+            <article class="panel form-panel">
+                <div class="section-copy">
+                    <p class="eyebrow">Add Requirement</p>
+                    <h2>Capture a new line item</h2>
+                    <p>
+                        Enter the requirement details, mark delivery status, and keep comments close
+                        to the release target.
+                    </p>
+                </div>
+
+                <form id="item-form" class="item-form">
+                    <div class="form-grid">
+                        <label class="form-field">
+                            <span class="field-label">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M4 7.5 12 3l8 4.5-8 4.5-8-4.5Zm0 3.9 8 4.5 8-4.5M4 15.3l8 4.7 8-4.7" />
+                                </svg>
+                                Item
+                            </span>
+                            <input id="item-name" name="item" type="text" placeholder="Hydraulic simulator patch" required />
+                        </label>
+
+                        <label class="form-field">
+                            <span class="field-label">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M4 7h16M4 12h16M4 17h10" />
+                                </svg>
+                                Scope
+                            </span>
+                            <input id="item-scope" name="scope" type="text" placeholder="Avionics integration lab" required />
+                        </label>
+
+                        <label class="form-field">
+                            <span class="field-label">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M6 12h4l2-5 3 10 2-5h3" />
+                                </svg>
+                                Status
+                            </span>
+                            <select id="item-status" name="status" required>
+                                <option value="On Track">On Track</option>
+                                <option value="At Risk">At Risk</option>
+                                <option value="Blocked">Blocked</option>
+                                <option value="Complete">Complete</option>
+                            </select>
+                        </label>
+
+                        <label class="form-field">
+                            <span class="field-label">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M7 4v3M17 4v3M4 9h16M5 6h14a1 1 0 0 1 1 1v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a1 1 0 0 1 1-1Z" />
+                                </svg>
+                                Release Target
+                            </span>
+                            <input id="item-release" name="releaseTarget" type="date" required />
+                        </label>
+
+                        <label class="form-field comments-field">
+                            <span class="field-label">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M5 6h14a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H9l-4 3v-3H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" />
+                                </svg>
+                                Comments
+                            </span>
+                            <textarea id="item-comments" name="comments" rows="4" placeholder="Dependency notes, owner follow-ups, or delivery constraints..." required></textarea>
+                        </label>
+                    </div>
+
+                    <button class="primary-button" type="submit">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 5v14M5 12h14" />
+                        </svg>
+                        Add Item
+                    </button>
+                </form>
+            </article>
+
+            <aside class="panel pulse-panel">
+                <div class="section-copy">
+                    <p class="eyebrow">Program Pulse</p>
+                    <h2>Live delivery snapshot</h2>
+                    <p>Status totals update instantly as the table changes.</p>
+                </div>
+
+                <div class="metric-grid">
+                    <article class="metric-card">
+                        <span class="metric-label">Total Items</span>
+                        <strong id="metric-total">0</strong>
+                    </article>
+                    <article class="metric-card">
+                        <span class="metric-label">On Track</span>
+                        <strong id="metric-on-track">0</strong>
+                    </article>
+                    <article class="metric-card">
+                        <span class="metric-label">At Risk</span>
+                        <strong id="metric-at-risk">0</strong>
+                    </article>
+                    <article class="metric-card">
+                        <span class="metric-label">Blocked</span>
+                        <strong id="metric-blocked">0</strong>
+                    </article>
+                </div>
+
+                <div class="status-legend" aria-label="Status legend">
+                    <span class="legend-pill on-track">On Track</span>
+                    <span class="legend-pill at-risk">At Risk</span>
+                    <span class="legend-pill blocked">Blocked</span>
+                    <span class="legend-pill complete">Complete</span>
+                </div>
+            </aside>
+        </section>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
