@@ -52,8 +52,12 @@ body::after {
     position: fixed;
     inset: 0;
     background:
-        radial-gradient(1100px 360px at 100% -6%, transparent 69%, rgba(27, 104, 184, 0.16) 70%, transparent 71%),
-        radial-gradient(860px 280px at 102% -4%, transparent 72%, rgba(27, 104, 184, 0.1) 73%, transparent 74%);
+        radial-gradient(circle at 86% 10%, rgba(31, 121, 209, 0.22) 0, rgba(31, 121, 209, 0.22) 7px, transparent 8px),
+        radial-gradient(1220px 420px at 101% -4%, transparent 69.2%, rgba(25, 104, 184, 0.24) 69.6%, rgba(25, 104, 184, 0.24) 69.95%, transparent 70.3%),
+        radial-gradient(1020px 350px at 101% -2%, transparent 71.1%, rgba(54, 136, 210, 0.2) 71.45%, rgba(54, 136, 210, 0.2) 71.8%, transparent 72.15%),
+        radial-gradient(820px 282px at 101% 0%, transparent 73.1%, rgba(104, 172, 228, 0.18) 73.45%, rgba(104, 172, 228, 0.18) 73.8%, transparent 74.15%),
+        radial-gradient(640px 220px at 100% 2%, transparent 74.6%, rgba(145, 200, 242, 0.16) 74.95%, rgba(145, 200, 242, 0.16) 75.3%, transparent 75.65%);
+    opacity: 0.95;
     pointer-events: none;
 }
 
@@ -241,6 +245,7 @@ h2 {
 
 .boeing-logo {
     width: 100%;
+    max-height: 118px;
     object-fit: contain;
 }
 
