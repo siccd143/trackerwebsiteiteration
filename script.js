@@ -1,4 +1,4 @@
-const STORAGE_KEY = "boeing-status-board-items";
+const STORAGE_KEY = "aviation-status-board-items";
 
 const seedItems = [
     {
